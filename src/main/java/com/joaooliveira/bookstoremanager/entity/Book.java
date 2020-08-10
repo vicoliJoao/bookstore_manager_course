@@ -31,7 +31,7 @@ public class Book {
     private Integer isbn;
 
 
-    @Column(name = "publisher_name",nullable = false, unique = true)/* o nome da coluna publisherName utiliza o padrão camel case, por isso precisou ser mapeado de forma mais direta no BD para ele pegar o padrão name = "publisher_name"*/
+    @Column(name = "publisher_name", nullable = false, unique = true)/* o nome da coluna publisherName utiliza o padrão camel case, por isso precisou ser mapeado de forma mais direta no BD para ele pegar o padrão name = "publisher_name"*/
     private String publisherName;
 
     /*aqui mapeamos direto a entidade, por isso não usamos @Column*/
