@@ -6,6 +6,7 @@ import com.joaooliveira.bookstoremanager.entity.Book;
 import com.joaooliveira.bookstoremanager.exception.BookNotFoundException;
 import com.joaooliveira.bookstoremanager.mapper.BookMapper;
 import com.joaooliveira.bookstoremanager.repository.BookRepository;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,4 +42,5 @@ public class BookService {
        return bookMapper.toDTO(book);
 
     }
+
 }
