@@ -12,8 +12,9 @@ import com.joaooliveira.bookstoremanager.entity.Book;
 import static com.joaooliveira.bookstoremanager.utils.AuthorUtils.createFakeAuthor;
 import static com.joaooliveira.bookstoremanager.utils.AuthorUtils.createFakeAuthorDTO;
 
+/*classe usada para criação de objetos fakes para utilização nos testes*/
 public class BookUtils {
-    private static final Faker faker = new Faker();
+    private static final Faker faker = new Faker(); /*biblioteca Faker - gera dados aleatórios de acordo com as condições impostas*/
 
     public static BookDTO createFakeBookDTO() {
         return BookDTO.builder()

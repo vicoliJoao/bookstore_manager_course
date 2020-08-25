@@ -32,10 +32,14 @@ public class BookServiceTest {
     void whenGivenExistingIdThenReturnThisBook() throws BookNotFoundException {
         Book expectedFoundBook = createFakeBook();
 
-        when(bookRepository.findById(expectedFoundBook.getId())).thenReturn(Optional.of(expectedFoundBook));
+        when(bookRepository.findById(expectedFoundBook.getId()))
+                .thenReturn(Optional.of(expectedFoundBook));/*criado para dizer ao Mock o que ele deve
+                retornar quando o método findById do BookRepository é chamado em uma simulação.*/
 
         BookDTO bookDTO = bookService.findById(expectedFoundBook.getId());
 
+        /*confirmação dos teste com alguns dados, o atributo do expectedFoundBook
+        tem que ser igual ao do BookDTO por conta do assertEquals*/
         assertEquals(expectedFoundBook.getName(), bookDTO.getName());
         assertEquals(expectedFoundBook.getIsbn(), bookDTO.getIsbn());
         assertEquals(expectedFoundBook.getPublisherName(), bookDTO.getPublisherName());
@@ -47,8 +51,8 @@ public class BookServiceTest {
         long invalidId = 10L;
 
         when(bookRepository.findById(invalidId))
-                .thenReturn(Optional.ofNullable(any(Book.class)));
+                .thenReturn(Optional.ofNullable(any(Book.class)));/*quando o método findById der invalido, então ele retorna um objeto nulo de qualquer instância da classe Book*/
 
-        assertThrows(BookNotFoundException.class, () -> bookService.findById(invalidId));
+        assertThrows(BookNotFoundException.class, () -> bookService.findById(invalidId));/*lança a exceção quando for passado um findById inválido*/
     }
 }

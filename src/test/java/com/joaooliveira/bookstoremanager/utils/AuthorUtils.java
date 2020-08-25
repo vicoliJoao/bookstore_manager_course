@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.joaooliveira.bookstoremanager.dto.AuthorDTO;
 import com.joaooliveira.bookstoremanager.entity.Author;
 
+/*classe usada para criação de objetos fakes para utilização nos testes*/
 public class AuthorUtils {
     private static final Faker faker = new Faker();
 
